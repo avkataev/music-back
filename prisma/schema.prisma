@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Artist {
+  id          Int      @id @default(autoincrement())
+  title       String
+  dateStart   Int?     @map("date_start")
+  type        String?
+  genres      String[]
+  description String?
+  countries   String[]
+  cities      String[]
+  imageUrl    String?  @map("image_url")
+  albums      Album[]  @relation("artist_albums")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt() @map("updated_at")
+
+  @@map("artists")
+}
+
+model Album {
+  id          Int      @id @default(autoincrement())
+  title       String
+  releaseYear Int?     @map("release_year")
+  coverUrl    String?  @map("cover_url")
+  duration    Int?
+  artists     Artist[] @relation("artist_albums")
+  tracks      Track[]  @relation("album_tracks")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt() @map("updated_at")
+
+  @@map("albums")
+}
+
+model Track {
+  id        Int      @id @default(autoincrement())
+  title     String
+  duration  Int?
+  lyrics    String?
+  album     Album    @relation("album_tracks", fields: [albumId], references: [id], onDelete: Cascade)
+  albumId   Int      @map("album_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt() @map("updated_at")
+
+  @@map("tracks")
+}

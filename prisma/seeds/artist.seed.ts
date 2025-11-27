@@ -1,6 +1,6 @@
-export const artistSeed = [
+export const seedArtists= [
   {
-    name: 'Кино',
+    title:'Кино',
     dateStart: 1982,
     type: 'группа',
     genres: ['рок', 'пост-панк'],
@@ -11,7 +11,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/kino.jpg',
   },
   {
-    name: 'Мумий Тролль',
+    title:'Мумий Тролль',
     dateStart: 1983,
     type: 'группа',
     genres: ['рок', 'поп-рок'],
@@ -22,7 +22,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/mumiytroll.jpg',
   },
   {
-    name: 'Би-2',
+    title:'Би-2',
     dateStart: 1988,
     type: 'группа',
     genres: ['рок', 'альтернативный рок'],
@@ -33,7 +33,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/bi2.jpg',
   },
   {
-    name: 'Земфира',
+    title:'Земфира',
     dateStart: 1999,
     type: 'исполнитель',
     genres: ['рок', 'альтернативный рок'],
@@ -43,7 +43,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/zemfira.jpg',
   },
   {
-    name: 'Сплин',
+    title:'Сплин',
     dateStart: 1994,
     type: 'группа',
     genres: ['рок', 'альтернативный рок'],
@@ -54,7 +54,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/splean.jpg',
   },
   {
-    name: 'Ленинград',
+    title:'Ленинград',
     dateStart: 1997,
     type: 'группа',
     genres: ['ска', 'рок'],
@@ -65,7 +65,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/leningrad.jpg',
   },
   {
-    name: 'ДДТ',
+    title:'ДДТ',
     dateStart: 1980,
     type: 'группа',
     genres: ['рок'],
@@ -75,7 +75,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/ddt.jpg',
   },
   {
-    name: 'Аквариум',
+    title:'Аквариум',
     dateStart: 1972,
     type: 'группа',
     genres: ['рок', 'фолк-рок'],
@@ -86,7 +86,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/aquarium.jpg',
   },
   {
-    name: 'Каста',
+    title:'Каста',
     dateStart: 1997,
     type: 'группа',
     genres: ['рэп', 'хип-хоп'],
@@ -96,7 +96,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/kasta.jpg',
   },
   {
-    name: 't.A.T.u.',
+    title:'t.A.T.u.',
     dateStart: 1999,
     type: 'группа',
     genres: ['поп', 'европоп', 'электропоп'],
@@ -107,7 +107,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/tatu.jpg',
   },
   {
-    name: 'Ария',
+    title:'Ария',
     dateStart: 1985,
     type: 'группа',
     genres: ['хэви-метал'],
@@ -117,7 +117,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/aria.jpg',
   },
   {
-    name: 'Король и Шут',
+    title:'Король и Шут',
     dateStart: 1988,
     type: 'группа',
     genres: ['панк-рок'],
@@ -127,7 +127,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/kish.jpg',
   },
   {
-    name: 'Чайф',
+    title:'Чайф',
     dateStart: 1985,
     type: 'группа',
     genres: ['рок'],
@@ -137,7 +137,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/chaif.jpg',
   },
   {
-    name: 'Любэ',
+    title:'Любэ',
     dateStart: 1989,
     type: 'группа',
     genres: ['рок', 'шансон'],
@@ -147,7 +147,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/lyube.jpg',
   },
   {
-    name: 'Машина времени',
+    title:'Машина времени',
     dateStart: 1969,
     type: 'группа',
     genres: ['рок'],
@@ -157,7 +157,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/mv.jpg',
   },
   {
-    name: 'Наутилус Помпилиус',
+    title:'Наутилус Помпилиус',
     dateStart: 1982,
     type: 'группа',
     genres: ['рок', 'арт-рок'],
@@ -167,7 +167,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/nau.jpg',
   },
   {
-    name: 'Звери',
+    title:'Звери',
     dateStart: 2001,
     type: 'группа',
     genres: ['поп-рок'],
@@ -177,7 +177,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/zveri.jpg',
   },
   {
-    name: 'Нервы',
+    title:'Нервы',
     dateStart: 2010,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -187,7 +187,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/nervy.jpg',
   },
   {
-    name: 'Noize MC',
+    title:'Noize MC',
     dateStart: 2003,
     type: 'исполнитель',
     genres: ['рэп', 'альтернативный рок'],
@@ -197,7 +197,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/noizemc.jpg',
   },
   {
-    name: 'Face',
+    title:'Face',
     dateStart: 2015,
     type: 'исполнитель',
     genres: ['рэп', 'панк-рэп'],
@@ -208,7 +208,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/face.jpg',
   },
   {
-    name: 'Metallica',
+    title:'Metallica',
     dateStart: 1981,
     type: 'группа',
     genres: ['хэви-метал'],
@@ -218,7 +218,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/metallica.jpg',
   },
   {
-    name: 'Linkin Park',
+    title:'Linkin Park',
     dateStart: 1996,
     type: 'группа',
     genres: ['альтернативный рок', 'ню-метал'],
@@ -228,7 +228,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/lp.jpg',
   },
   {
-    name: 'Nirvana',
+    title:'Nirvana',
     dateStart: 1987,
     type: 'группа',
     genres: ['гранж'],
@@ -238,7 +238,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/nirvana.jpg',
   },
   {
-    name: 'Coldplay',
+    title:'Coldplay',
     dateStart: 1996,
     type: 'группа',
     genres: ['поп-рок'],
@@ -248,7 +248,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/coldplay.jpg',
   },
   {
-    name: 'Radiohead',
+    title:'Radiohead',
     dateStart: 1985,
     type: 'группа',
     genres: ['арт-рок', 'альтернативный рок'],
@@ -258,7 +258,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/radiohead.jpg',
   },
   {
-    name: 'Imagine Dragons',
+    title:'Imagine Dragons',
     dateStart: 2008,
     type: 'группа',
     genres: ['поп-рок'],
@@ -268,7 +268,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/id.jpg',
   },
   {
-    name: 'The Weeknd',
+    title:'The Weeknd',
     dateStart: 2010,
     type: 'исполнитель',
     genres: ['R&B', 'поп'],
@@ -278,7 +278,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/weeknd.jpg',
   },
   {
-    name: 'Billie Eilish',
+    title:'Billie Eilish',
     dateStart: 2015,
     type: 'исполнитель',
     genres: ['поп'],
@@ -288,7 +288,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/billie.jpg',
   },
   {
-    name: 'Ariana Grande',
+    title:'Ariana Grande',
     dateStart: 2008,
     type: 'исполнитель',
     genres: ['поп', 'R&B'],
@@ -298,7 +298,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/ariana.jpg',
   },
   {
-    name: 'Rammstein',
+    title:'Rammstein',
     dateStart: 1994,
     type: 'группа',
     genres: ['индастриал-метал'],
@@ -308,7 +308,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/rammstein.jpg',
   },
   {
-    name: 'Depeche Mode',
+    title:'Depeche Mode',
     dateStart: 1980,
     type: 'группа',
     genres: ['синт-поп', 'электроника'],
@@ -318,7 +318,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/dm.jpg',
   },
   {
-    name: 'Queen',
+    title:'Queen',
     dateStart: 1970,
     type: 'группа',
     genres: ['рок'],
@@ -328,7 +328,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/queen.jpg',
   },
   {
-    name: 'U2',
+    title:'U2',
     dateStart: 1976,
     type: 'группа',
     genres: ['рок'],
@@ -338,7 +338,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/u2.jpg',
   },
   {
-    name: 'Muse',
+    title:'Muse',
     dateStart: 1994,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -348,7 +348,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/muse.jpg',
   },
   {
-    name: 'Slipknot',
+    title:'Slipknot',
     dateStart: 1995,
     type: 'группа',
     genres: ['ню-метал'],
@@ -358,7 +358,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/slipknot.jpg',
   },
   {
-    name: 'Korn',
+    title:'Korn',
     dateStart: 1993,
     type: 'группа',
     genres: ['ню-метал'],
@@ -368,7 +368,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/korn.jpg',
   },
   {
-    name: 'System of a Down',
+    title:'System of a Down',
     dateStart: 1994,
     type: 'группа',
     genres: ['альтернативный металл'],
@@ -378,7 +378,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/soad.jpg',
   },
   {
-    name: 'Red Hot Chili Peppers',
+    title:'Red Hot Chili Peppers',
     dateStart: 1983,
     type: 'группа',
     genres: ['альтернативный рок', 'фанк-рок'],
@@ -388,7 +388,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/rhcp.jpg',
   },
   {
-    name: 'Gorillaz',
+    title:'Gorillaz',
     dateStart: 1998,
     type: 'группа',
     genres: ['альтернативная электроника'],
@@ -398,7 +398,7 @@ export const artistSeed = [
     imageUrl: 'https://example.com/gorillaz.jpg',
   },
   {
-    name: 'The Beatles',
+    title:'The Beatles',
     dateStart: 1960,
     type: 'группа',
     genres: ['рок'],
@@ -408,7 +408,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Rolling Stones',
+    title:'Rolling Stones',
     dateStart: 1962,
     type: 'группа',
     genres: ['рок'],
@@ -418,7 +418,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Scorpions',
+    title:'Scorpions',
     dateStart: 1965,
     type: 'группа',
     genres: ['хард-рок'],
@@ -428,7 +428,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Deep Purple',
+    title:'Deep Purple',
     dateStart: 1968,
     type: 'группа',
     genres: ['хард-рок'],
@@ -438,7 +438,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'AC/DC',
+    title:'AC/DC',
     dateStart: 1973,
     type: 'группа',
     genres: ['хард-рок'],
@@ -448,7 +448,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Adele',
+    title:'Adele',
     dateStart: 2006,
     type: 'исполнитель',
     genres: ['поп', 'соул'],
@@ -458,7 +458,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Taylor Swift',
+    title:'Taylor Swift',
     dateStart: 2006,
     type: 'исполнитель',
     genres: ['поп'],
@@ -468,7 +468,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Harry Styles',
+    title:'Harry Styles',
     dateStart: 2010,
     type: 'исполнитель',
     genres: ['поп'],
@@ -478,7 +478,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Ed Sheeran',
+    title:'Ed Sheeran',
     dateStart: 2011,
     type: 'исполнитель',
     genres: ['поп'],
@@ -488,7 +488,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Bruno Mars',
+    title:'Bruno Mars',
     dateStart: 2004,
     type: 'исполнитель',
     genres: ['поп', 'фанк'],
@@ -498,7 +498,7 @@ export const artistSeed = [
     imageUrl: '',
   },
   {
-    name: 'Sia',
+    title:'Sia',
     dateStart: 1997,
     type: 'исполнитель',
     genres: ['поп'],
@@ -506,7 +506,7 @@ export const artistSeed = [
     cities: ['Аделаида'],
   },
   {
-    name: 'Eminem',
+    title:'Eminem',
     dateStart: 1996,
     type: 'исполнитель',
     genres: ['рэп'],
@@ -514,7 +514,7 @@ export const artistSeed = [
     cities: ['Детройт'],
   },
   {
-    name: 'Kanye West',
+    title:'Kanye West',
     dateStart: 1996,
     type: 'исполнитель',
     genres: ['рэп'],
@@ -522,7 +522,7 @@ export const artistSeed = [
     cities: ['Чикаго'],
   },
   {
-    name: 'Drake',
+    title:'Drake',
     dateStart: 2006,
     type: 'исполнитель',
     genres: ['рэп', 'R&B'],
@@ -530,7 +530,7 @@ export const artistSeed = [
     cities: ['Торонто'],
   },
   {
-    name: 'Kendrick Lamar',
+    title:'Kendrick Lamar',
     dateStart: 2003,
     type: 'исполнитель',
     genres: ['рэп'],
@@ -538,7 +538,7 @@ export const artistSeed = [
     cities: ['Комтон'],
   },
   {
-    name: 'Travis Scott',
+    title:'Travis Scott',
     dateStart: 2012,
     type: 'исполнитель',
     genres: ['рэп'],
@@ -546,7 +546,7 @@ export const artistSeed = [
     cities: ['Хьюстон'],
   },
   {
-    name: 'Post Malone',
+    title:'Post Malone',
     dateStart: 2015,
     type: 'исполнитель',
     genres: ['рэп', 'поп'],
@@ -554,7 +554,7 @@ export const artistSeed = [
     cities: ['Сиракьюс'],
   },
   {
-    name: 'Doja Cat',
+    title:'Doja Cat',
     dateStart: 2014,
     type: 'исполнитель',
     genres: ['поп', 'рэп'],
@@ -562,7 +562,7 @@ export const artistSeed = [
     cities: ['Лос-Анджелес'],
   },
   {
-    name: 'Dua Lipa',
+    title:'Dua Lipa',
     dateStart: 2015,
     type: 'исполнитель',
     genres: ['поп'],
@@ -570,7 +570,7 @@ export const artistSeed = [
     cities: ['Лондон'],
   },
   {
-    name: 'Shakira',
+    title:'Shakira',
     dateStart: 1990,
     type: 'исполнитель',
     genres: ['поп'],
@@ -579,7 +579,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'Madonna',
+    title:'Madonna',
     dateStart: 1979,
     type: 'исполнитель',
     genres: ['поп'],
@@ -587,7 +587,7 @@ export const artistSeed = [
     cities: ['Бэй-Сити'],
   },
   {
-    name: 'Lady Gaga',
+    title:'Lady Gaga',
     dateStart: 2005,
     type: 'исполнитель',
     genres: ['поп'],
@@ -595,7 +595,7 @@ export const artistSeed = [
     cities: ['Нью-Йорк'],
   },
   {
-    name: 'Beyoncé',
+    title:'Beyoncé',
     dateStart: 1997,
     type: 'исполнитель',
     genres: ['поп', 'R&B'],
@@ -603,7 +603,7 @@ export const artistSeed = [
     cities: ['Хьюстон'],
   },
   {
-    name: 'Rihanna',
+    title:'Rihanna',
     dateStart: 2003,
     type: 'исполнитель',
     genres: ['поп', 'R&B'],
@@ -611,7 +611,7 @@ export const artistSeed = [
     cities: ['Сент-Майкл'],
   },
   {
-    name: 'Katy Perry',
+    title:'Katy Perry',
     dateStart: 2001,
     type: 'исполнитель',
     genres: ['поп'],
@@ -619,7 +619,7 @@ export const artistSeed = [
     cities: ['Санта-Барбара'],
   },
   {
-    name: 'The Killers',
+    title:'The Killers',
     dateStart: 2001,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -627,7 +627,7 @@ export const artistSeed = [
     cities: ['Лас-Вегас'],
   },
   {
-    name: 'Oasis',
+    title:'Oasis',
     dateStart: 1991,
     type: 'группа',
     genres: ['бритпоп'],
@@ -635,7 +635,7 @@ export const artistSeed = [
     cities: ['Манчестер'],
   },
   {
-    name: 'Blur',
+    title:'Blur',
     dateStart: 1988,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -643,7 +643,7 @@ export const artistSeed = [
     cities: ['Лондон'],
   },
   {
-    name: 'Arctic Monkeys',
+    title:'Arctic Monkeys',
     dateStart: 2002,
     type: 'группа',
     genres: ['инди-рок'],
@@ -651,7 +651,7 @@ export const artistSeed = [
     cities: ['Шеффилд'],
   },
   {
-    name: 'The 1975',
+    title:'The 1975',
     dateStart: 2002,
     type: 'группа',
     genres: ['поп-рок'],
@@ -660,7 +660,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'Nightwish',
+    title:'Nightwish',
     dateStart: 1996,
     type: 'группа',
     genres: ['симфоник-метал'],
@@ -668,7 +668,7 @@ export const artistSeed = [
     cities: ['Китеэ'],
   },
   {
-    name: 'Within Temptation',
+    title:'Within Temptation',
     dateStart: 1996,
     type: 'группа',
     genres: ['симфоник-метал'],
@@ -676,7 +676,7 @@ export const artistSeed = [
     cities: ['Ваддинксвен'],
   },
   {
-    name: 'Evanescence',
+    title:'Evanescence',
     dateStart: 1995,
     type: 'группа',
     genres: ['альтернативный металл'],
@@ -684,7 +684,7 @@ export const artistSeed = [
     cities: ['Литл-Рок'],
   },
   {
-    name: 'Bring Me the Horizon',
+    title:'Bring Me the Horizon',
     dateStart: 2004,
     type: 'группа',
     genres: ['альтернативный металл'],
@@ -692,7 +692,7 @@ export const artistSeed = [
     cities: ['Шеффилд'],
   },
   {
-    name: 'Paramore',
+    title:'Paramore',
     dateStart: 2004,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -701,7 +701,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'The Cure',
+    title:'The Cure',
     dateStart: 1976,
     type: 'группа',
     genres: ['пост-панк'],
@@ -709,7 +709,7 @@ export const artistSeed = [
     cities: ['Кроули'],
   },
   {
-    name: 'The Smiths',
+    title:'The Smiths',
     dateStart: 1982,
     type: 'группа',
     genres: ['инди-рок'],
@@ -717,7 +717,7 @@ export const artistSeed = [
     cities: ['Манчестер'],
   },
   {
-    name: 'Green Day',
+    title:'Green Day',
     dateStart: 1987,
     type: 'группа',
     genres: ['панк-рок'],
@@ -725,7 +725,7 @@ export const artistSeed = [
     cities: ['Окленд'],
   },
   {
-    name: 'blink-182',
+    title:'blink-182',
     dateStart: 1992,
     type: 'группа',
     genres: ['поп-панк'],
@@ -733,7 +733,7 @@ export const artistSeed = [
     cities: ['Поуэй'],
   },
   {
-    name: 'Sum 41',
+    title:'Sum 41',
     dateStart: 1996,
     type: 'группа',
     genres: ['поп-панк'],
@@ -742,7 +742,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'The Prodigy',
+    title:'The Prodigy',
     dateStart: 1990,
     type: 'группа',
     genres: ['электроника'],
@@ -750,7 +750,7 @@ export const artistSeed = [
     cities: ['Брентри'],
   },
   {
-    name: 'Daft Punk',
+    title:'Daft Punk',
     dateStart: 1993,
     type: 'группа',
     genres: ['электроника'],
@@ -758,7 +758,7 @@ export const artistSeed = [
     cities: ['Париж'],
   },
   {
-    name: 'Justice',
+    title:'Justice',
     dateStart: 2003,
     type: 'группа',
     genres: ['электроника'],
@@ -766,7 +766,7 @@ export const artistSeed = [
     cities: ['Париж'],
   },
   {
-    name: 'Avicii',
+    title:'Avicii',
     dateStart: 2008,
     type: 'исполнитель',
     genres: ['EDM'],
@@ -774,7 +774,7 @@ export const artistSeed = [
     cities: ['Стокгольм'],
   },
   {
-    name: 'Swedish House Mafia',
+    title:'Swedish House Mafia',
     dateStart: 2008,
     type: 'группа',
     genres: ['EDM'],
@@ -783,7 +783,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'Tiesto',
+    title:'Tiesto',
     dateStart: 1994,
     type: 'исполнитель',
     genres: ['транс', 'EDM'],
@@ -791,7 +791,7 @@ export const artistSeed = [
     cities: ['Бреда'],
   },
   {
-    name: 'Armin van Buuren',
+    title:'Armin van Buuren',
     dateStart: 1995,
     type: 'исполнитель',
     genres: ['транс'],
@@ -799,7 +799,7 @@ export const artistSeed = [
     cities: ['Лейден'],
   },
   {
-    name: 'David Guetta',
+    title:'David Guetta',
     dateStart: 1986,
     type: 'исполнитель',
     genres: ['EDM'],
@@ -807,7 +807,7 @@ export const artistSeed = [
     cities: ['Париж'],
   },
   {
-    name: 'Calvin Harris',
+    title:'Calvin Harris',
     dateStart: 2002,
     type: 'исполнитель',
     genres: ['EDM', 'поп'],
@@ -815,7 +815,7 @@ export const artistSeed = [
     cities: ['Дамфрис'],
   },
   {
-    name: 'Zedd',
+    title:'Zedd',
     dateStart: 2002,
     type: 'исполнитель',
     genres: ['EDM'],
@@ -824,7 +824,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'Foo Fighters',
+    title:'Foo Fighters',
     dateStart: 1994,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -832,7 +832,7 @@ export const artistSeed = [
     cities: ['Сиэтл'],
   },
   {
-    name: 'Fall Out Boy',
+    title:'Fall Out Boy',
     dateStart: 2001,
     type: 'группа',
     genres: ['поп-панк'],
@@ -840,7 +840,7 @@ export const artistSeed = [
     cities: ['Уилметт'],
   },
   {
-    name: 'The Strokes',
+    title:'The Strokes',
     dateStart: 1998,
     type: 'группа',
     genres: ['инди-рок'],
@@ -848,7 +848,7 @@ export const artistSeed = [
     cities: ['Нью-Йорк'],
   },
   {
-    name: 'Kings of Leon',
+    title:'Kings of Leon',
     dateStart: 1999,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -856,7 +856,7 @@ export const artistSeed = [
     cities: ['Нашвилл'],
   },
   {
-    name: 'MGMT',
+    title:'MGMT',
     dateStart: 2002,
     type: 'группа',
     genres: ['психоделик-поп'],
@@ -865,7 +865,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'The Chemical Brothers',
+    title:'The Chemical Brothers',
     dateStart: 1989,
     type: 'группа',
     genres: ['электроника'],
@@ -873,7 +873,7 @@ export const artistSeed = [
     cities: ['Манчестер'],
   },
   {
-    name: 'Bon Jovi',
+    title:'Bon Jovi',
     dateStart: 1983,
     type: 'группа',
     genres: ['хард-рок'],
@@ -881,7 +881,7 @@ export const artistSeed = [
     cities: ['Сэйрвилл'],
   },
   {
-    name: "Guns N' Roses",
+    title:"Guns N' Roses",
     dateStart: 1985,
     type: 'группа',
     genres: ['хард-рок'],
@@ -889,7 +889,7 @@ export const artistSeed = [
     cities: ['Лос-Анджелес'],
   },
   {
-    name: 'Aerosmith',
+    title:'Aerosmith',
     dateStart: 1970,
     type: 'группа',
     genres: ['хард-рок'],
@@ -897,7 +897,7 @@ export const artistSeed = [
     cities: ['Бостон'],
   },
   {
-    name: 'The Doors',
+    title:'The Doors',
     dateStart: 1965,
     type: 'группа',
     genres: ['рок'],
@@ -906,7 +906,7 @@ export const artistSeed = [
   },
 
   {
-    name: 'Placebo',
+    title:'Placebo',
     dateStart: 1994,
     type: 'группа',
     genres: ['альтернативный рок'],
@@ -914,7 +914,7 @@ export const artistSeed = [
     cities: ['Лондон'],
   },
   {
-    name: 'Massive Attack',
+    title:'Massive Attack',
     dateStart: 1988,
     type: 'группа',
     genres: ['трип-хоп'],
@@ -922,7 +922,7 @@ export const artistSeed = [
     cities: ['Бристоль'],
   },
   {
-    name: 'Portishead',
+    title:'Portishead',
     dateStart: 1991,
     type: 'группа',
     genres: ['трип-хоп'],
@@ -930,7 +930,7 @@ export const artistSeed = [
     cities: ['Бристоль'],
   },
   {
-    name: 'The Cranberries',
+    title:'The Cranberries',
     dateStart: 1989,
     type: 'группа',
     genres: ['рок'],
@@ -938,7 +938,7 @@ export const artistSeed = [
     cities: ['Лимерик'],
   },
   {
-    name: 'The Smashing Pumpkins',
+    title:'The Smashing Pumpkins',
     dateStart: 1988,
     type: 'группа',
     genres: ['альтернативный рок'],

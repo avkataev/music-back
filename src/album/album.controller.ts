@@ -1,13 +1,13 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { AlbumService } from './album.service';
-import { AlbumEntity } from './entities/album.entity';
+import { Album } from '@prisma/client';
 
 @Controller('album')
 export class AlbumController {
   constructor(private readonly albumService: AlbumService) {}
 
   @Get()
-  findAll(): Promise<AlbumEntity[]> {
+  findAll(): Promise<Album[]> {
     return this.albumService.findAll();
   }
   @Get(':id')

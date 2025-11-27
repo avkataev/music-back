@@ -1,22 +1,20 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { AlbumEntity } from './entities/album.entity';
-import { Repository } from 'typeorm';
+import { PrismaService } from '../prisma/prisma.service';
+import { Album } from '@prisma/client';
 
 @Injectable()
 export class AlbumService {
-  constructor(
-    @InjectRepository(AlbumEntity)
-    private readonly albumRepository: Repository<AlbumEntity>,
-  ) {}
+  constructor(private readonly prismaService: PrismaService) {}
 
-  async findAll(): Promise<AlbumEntity[]> {
-    return await this.albumRepository.find();
+  async findAll(): Promise<Album[]> {
+    return await this.prismaService.album.findMany();
   }
-  async findById(id: number): Promise<AlbumEntity> {
-    const album = await this.albumRepository.findOne({
+  async findById(id: number): Promise<Album> {
+    const album = await this.prismaService.album.findUnique({
       where: { id: id },
-      relations: ['artists'],
+      include: {
+        artists: true,
+      },
     });
     if (!album) {
       throw new NotFoundException('Album not found');

@@ -1,13 +1,18 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ArtistService } from './artist.service';
-import { ArtistEntity } from './entities/artist.entity';
+import { Artist } from '@prisma/client';
+import { CreateArtistDto } from './dto/create.artist.dto';
 
 @Controller('artist')
 export class ArtistController {
   constructor(private readonly artistService: ArtistService) {}
 
+  @Post('create')
+  create(@Body() dto: CreateArtistDto) {
+    return this.artistService.create(dto);
+  }
   @Get()
-  findAll(): Promise<ArtistEntity[]> {
+  findAll(): Promise<Artist[]> {
     return this.artistService.findAll();
   }
   @Get(':id')
