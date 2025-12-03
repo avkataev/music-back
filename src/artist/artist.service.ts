@@ -8,12 +8,12 @@ export class ArtistService {
   constructor(private readonly prismaService: PrismaService) {}
   async create(dto: CreateArtistDto): Promise<Artist> {
     const title = dto.title;
-    const artist = await this.prismaService.artist.create({
+
+    return await this.prismaService.artist.create({
       data: {
         title,
       },
     });
-    return artist;
   }
   async findAll() {
     return await this.prismaService.artist.findMany();

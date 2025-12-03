@@ -28,8 +28,10 @@ async function main() {
   await prisma.$executeRawUnsafe(`INSERT INTO "_artist_albums" ("A", "B") VALUES (6, 1)`);
   await prisma.$executeRawUnsafe(`INSERT INTO "_artist_albums" ("A", "B") VALUES (7, 1)`);
   await prisma.$executeRawUnsafe(`INSERT INTO "_artist_albums" ("A", "B") VALUES (8, 1)`);
-  //await prisma.track.deleteMany()
-  //await prisma.track.createMany({ data: seedTracks });
+
+  await prisma.$executeRawUnsafe(`ALTER SEQUENCE tracks_id_seq RESTART WITH 1`);
+  await prisma.track.deleteMany()
+  await prisma.track.createMany({ data: seedTracks });
 }
 main()
   .then(async () => {

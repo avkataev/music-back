@@ -14,6 +14,7 @@ export class AlbumService {
       where: { id: id },
       include: {
         artists: true,
+        tracks: true,
       },
     });
     if (!album) {
