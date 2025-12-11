@@ -6,25 +6,45 @@ datasource db {
   provider = "postgresql"
 }
 
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String
+  password  String
+  name      String   @map("first_name")
+  // firstName String   @map("first_name")
+  // lastName  String   @map("last_name")
+  // aliace    String?
+  // phone     String
+  // country   String
+  // region    String
+  // city      String
+  // sex       String
+  // birthday  DateTime
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt() @map("updated_at")
+
+  @@map("users")
+}
+
 model Artist {
-  id           Int         @id @default(autoincrement())
+  id           Int       @id @default(autoincrement())
   title        String
-  dateStart    Int?        @map("date_start")
+  dateStart    Int?      @map("date_start")
   aliace       String?
   type         String?
   genres       String[]
   description  String?
   countries    String[]
   cities       String[]
-  imageUrl     String?     @map("image_url")
-  albums       Album[]     @relation("artist_albums")
-  tracks       Track[]     @relation("artist_tracks")
-  featInTracks Track[]     @relation("artist_feat_track")
-  concerts     Concert[]   @relation("artist_concerts")
-  news         News[]      @relation("artist_news")
-  awards       Award[]     @relation("artist_awards")
-  createdAt    DateTime    @default(now()) @map("created_at")
-  updatedAt    DateTime    @updatedAt() @map("updated_at")
+  imageUrl     String?   @map("image_url")
+  albums       Album[]   @relation("artist_albums")
+  tracks       Track[]   @relation("artist_tracks")
+  featInTracks Track[]   @relation("artist_feat_track")
+  concerts     Concert[] @relation("artist_concerts")
+  news         News[]    @relation("artist_news")
+  awards       Award[]   @relation("artist_awards")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt() @map("updated_at")
 
   @@map("artists")
 }
@@ -103,24 +123,6 @@ model Place {
   @@map("places")
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  firstName String   @map("first_name")
-  lastName  String   @map("last_name")
-  aliace    String?
-  email     String
-  phone     String
-  country   String
-  region    String
-  city      String
-  sex       String
-  birthday  DateTime
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt() @map("updated_at")
-
-  @@map("users")
-}
-
 model Review {
   id          Int      @id @default(autoincrement())
   title       String
@@ -146,7 +148,7 @@ model Award {
   id          Int      @id @default(autoincrement())
   title       String
   description String
-  artist      Artist?   @relation("artist_awards", fields: [artistId], references: [id], onDelete: Cascade)
+  artist      Artist?  @relation("artist_awards", fields: [artistId], references: [id], onDelete: Cascade)
   artistId    Int?     @map("artist_id")
   album       Album?   @relation("album_awards", fields: [albumId], references: [id], onDelete: Cascade)
   albumId     Int?     @map("album_id")
