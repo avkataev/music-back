@@ -6,12 +6,7 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class RegisterRequest {
-  @IsString({ message: 'Имя должно быть строкой' })
-  @IsNotEmpty({ message: 'Имя не может быть пустым' })
-  @MaxLength(50, { message: 'Имя не может быть превышать 50 символов' })
-  name: string;
-
+export class LoginRequest {
   @IsString({ message: 'Почта должна быть строкой' })
   @IsNotEmpty({ message: 'Почта не может быть пустой' })
   @IsEmail({}, { message: 'Некорректный формат почты' })
