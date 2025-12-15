@@ -97,11 +97,10 @@ export class AuthService {
 
   async refresh(req: Request, res: Response) {
     const refreshToken = req.cookies['refreshToken'];
-
     if (!refreshToken) {
       throw new UnauthorizedException('Недействительный refresh-токен');
     }
-
+    console.log('refresh refreshToken', refreshToken);
     const payload: JwtPayload = await this.jwtService.verifyAsync(refreshToken);
 
     if (payload) {
@@ -116,6 +115,30 @@ export class AuthService {
         throw new NotFoundException('Пользователь не найден');
       }
       return this.auth(res, String(user.id));
+    }
+  }
+
+  async info(req: Request) {
+    const refreshToken = req.cookies['refreshToken'];
+    if (!refreshToken) {
+      throw new UnauthorizedException('Недействительный refresh-токен');
+    }
+    const payload: JwtPayload = await this.jwtService.verifyAsync(refreshToken);
+
+    if (payload) {
+      const user = await this.prismaService.user.findUnique({
+        where: { id: payload.id },
+        select: {
+          id: true,
+          email: true,
+          name: true,
+        },
+      });
+
+      if (!user) {
+        throw new NotFoundException('Пользователь не найден');
+      }
+      return user;
     }
   }
 
@@ -138,8 +161,8 @@ export class AuthService {
       httpOnly: true,
       domain: this.COOKIE_DOMAIN,
       expires: expires,
-      secure: !isDev(this.configService),
-      sameSite: isDev(this.configService) ? 'none' : 'lax',
+      secure: false,
+      sameSite: 'lax',
     });
   }
 

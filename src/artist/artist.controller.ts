@@ -13,6 +13,7 @@ import { Artist } from '@prisma/client';
 import { CreateArtistDto } from './dto/create.artist.dto';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UpdateArtistDto } from './dto/update.artist.dto';
+import { Authorization } from '../auth/decorators/authorization.decorator';
 
 @Controller('artist')
 export class ArtistController {
@@ -28,6 +29,7 @@ export class ArtistController {
     return this.artistService.create(dto);
   }
 
+  @Authorization()
   @ApiOperation({
     summary: 'Получить список исполнителей',
     description: 'Возвращает список всех исполнителей',

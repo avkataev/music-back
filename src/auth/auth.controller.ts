@@ -59,4 +59,11 @@ export class AuthController {
   me(@Authorized() user: User) {
     return user;
   }
+
+  @Authorization()
+  @Get('info')
+  @HttpCode(HttpStatus.OK)
+  async info(@Req() req: Request) {
+    return await this.authService.info(req);
+  }
 }

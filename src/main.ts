@@ -16,7 +16,11 @@ async function bootstrap() {
   //app.useGlobalFilters(new AllExceptionsFilter());
   setupSwagger(app);
   app.setGlobalPrefix('/api');
-  app.enableCors();
+  app.enableCors({
+    origin: 'http://localhost:4200',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
   app.use(logger);
   await app.listen(process.env.PORT ?? 8080);
 }
