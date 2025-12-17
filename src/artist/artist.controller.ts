@@ -14,6 +14,7 @@ import { CreateArtistDto } from './dto/create.artist.dto';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UpdateArtistDto } from './dto/update.artist.dto';
 import { Authorization } from '../auth/decorators/authorization.decorator';
+import { Authorized } from '../auth/decorators/authorized.decorator';
 
 @Controller('artist')
 export class ArtistController {
@@ -40,6 +41,7 @@ export class ArtistController {
     return this.artistService.findAll();
   }
 
+  @Authorization()
   @ApiOperation({
     summary: 'Получить исполнителя по id',
     description: 'Возвращает информацию об исполнителе',
@@ -50,8 +52,8 @@ export class ArtistController {
     description: 'Исполнитель не найден',
   })
   @Get(':id')
-  findById(@Param('id') id: string) {
-    return this.artistService.findById(+id);
+  findById(@Param('id') id: string, @Authorized('id') userId: string) {
+    return this.artistService.findById(+id, userId);
   }
 
   @ApiOperation({
@@ -80,5 +82,14 @@ export class ArtistController {
   @Put(':id')
   update(@Param('id') id: string, @Body() dto: UpdateArtistDto) {
     return this.artistService.update(+id, dto);
+  }
+
+  @Authorization()
+  @Post(':id/toggle-like')
+  async toggleArtistLike(
+    @Param('id') artistId: string,
+    @Authorized('id') userId: string,
+  ) {
+    return this.artistService.toggleArtistLike(userId, +artistId);
   }
 }

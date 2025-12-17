@@ -11,7 +11,6 @@ import { JwtService, JwtSignOptions } from '@nestjs/jwt';
 import type { JwtPayload } from './interfaces/jwt.interface';
 import { LoginRequest } from './dto/login.dto';
 import type { Response, Request } from 'express';
-import { isDev } from '../utils/is-dev-util';
 
 @Injectable()
 export class AuthService {
@@ -100,7 +99,6 @@ export class AuthService {
     if (!refreshToken) {
       throw new UnauthorizedException('Недействительный refresh-токен');
     }
-    console.log('refresh refreshToken', refreshToken);
     const payload: JwtPayload = await this.jwtService.verifyAsync(refreshToken);
 
     if (payload) {

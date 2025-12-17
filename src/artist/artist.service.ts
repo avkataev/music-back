@@ -35,7 +35,7 @@ export class ArtistService {
   async findAll() {
     return await this.prismaService.artist.findMany();
   }
-  async findById(id: number): Promise<Artist> {
+  async findById(id: number, userId: string) {
     const artist = await this.prismaService.artist.findUnique({
       where: { id: id },
       include: {
@@ -45,7 +45,25 @@ export class ArtistService {
     if (!artist) {
       throw new NotFoundException('Artist not found');
     }
-    return artist;
+    // 2. Считаем общее количество лайков
+    const totalLikes = await this.prismaService.artistLike.count({
+      where: { artistId: id },
+    });
+
+    // 3. Проверяем, лайкал ли текущий пользователь
+    let likedByMe = false;
+    if (userId) {
+      const existing = await this.prismaService.artistLike.findUnique({
+        where: { userId_artistId: { userId, artistId: id } },
+      });
+      likedByMe = !!existing;
+    }
+    // 4. Возвращаем объединённый объект
+    return {
+      ...artist,
+      totalLikes,
+      likedByMe,
+    };
   }
   async remove(id: number) {
     const artist = await this.prismaService.artist.findUnique({
@@ -89,5 +107,26 @@ export class ArtistService {
       throw new NotFoundException('Artist not found');
     }
     return artist;
+  }
+
+  async toggleArtistLike(userId: string, artistId: number) {
+    // Проверяем, есть ли лайк
+    const existing = await this.prismaService.artistLike.findUnique({
+      where: { userId_artistId: { userId, artistId } },
+    });
+
+    if (existing) {
+      // Если есть — удаляем
+      await this.prismaService.artistLike.delete({
+        where: { userId_artistId: { userId, artistId } },
+      });
+      return { liked: false };
+    } else {
+      // Если нет — создаём
+      await this.prismaService.artistLike.create({
+        data: { userId, artistId },
+      });
+      return { liked: true };
+    }
   }
 }

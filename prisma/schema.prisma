@@ -6,52 +6,89 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Role {
+  USER
+  ADMIN
+  ARTIST
+}
+
 model User {
-  id        String      @id @default(uuid())
+  id        String   @id @default(uuid())
   email     String   @unique
   password  String
   name      String
+  role      Role     @default(USER)
+  artistLikes    ArtistLike[]    @relation("UserArtistLikes")
+  albumRatings   AlbumRating[]   @relation("UserAlbumRatings")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt() @map("updated_at")
 
   @@map("users")
 }
 
+model ArtistLike {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation("UserArtistLikes", fields: [userId], references: [id])
+  userId    String
+  artist    Artist   @relation("ArtistLikes", fields: [artistId], references: [id])
+  artistId  Int
+  createdAt DateTime @default(now())
+
+  @@unique([userId, artistId])
+  @@map("artist_likes")
+}
+
+model AlbumRating {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation("UserAlbumRatings", fields: [userId], references: [id])
+  userId    String
+  album     Album    @relation("AlbumRatings", fields: [albumId], references: [id])
+  albumId   Int
+  value     Int      // Например, 1–5
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, albumId])
+  @@map("album_ratings")
+}
+
 model Artist {
-  id           Int       @id @default(autoincrement())
+  id           Int          @id @default(autoincrement())
   title        String
-  dateStart    Int?      @map("date_start")
+  dateStart    Int?         @map("date_start")
   aliace       String?
   type         String?
   genres       String[]
   description  String?
   countries    String[]
   cities       String[]
-  imageUrl     String?   @map("image_url")
-  albums       Album[]   @relation("artist_albums")
-  tracks       Track[]   @relation("artist_tracks")
-  featInTracks Track[]   @relation("artist_feat_track")
-  concerts     Concert[] @relation("artist_concerts")
-  news         News[]    @relation("artist_news")
-  awards       Award[]   @relation("artist_awards")
-  createdAt    DateTime  @default(now()) @map("created_at")
-  updatedAt    DateTime  @updatedAt() @map("updated_at")
+  imageUrl     String?      @map("image_url")
+  albums       Album[]      @relation("artist_albums")
+  tracks       Track[]      @relation("artist_tracks")
+  featInTracks Track[]      @relation("artist_feat_track")
+  concerts     Concert[]    @relation("artist_concerts")
+  news         News[]       @relation("artist_news")
+  awards       Award[]      @relation("artist_awards")
+  likes        ArtistLike[] @relation("ArtistLikes")
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt() @map("updated_at")
 
   @@map("artists")
 }
 
 model Album {
-  id          Int      @id @default(autoincrement())
+  id          Int           @id @default(autoincrement())
   title       String
-  releaseYear Int?     @map("release_year")
-  coverUrl    String?  @map("cover_url")
+  releaseYear Int?          @map("release_year")
+  coverUrl    String?       @map("cover_url")
   duration    Int?
   description String?
-  artists     Artist[] @relation("artist_albums")
-  tracks      Track[]  @relation("album_tracks")
-  awards      Award[]  @relation("album_awards")
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt() @map("updated_at")
+  artists     Artist[]      @relation("artist_albums")
+  tracks      Track[]       @relation("album_tracks")
+  awards      Award[]       @relation("album_awards")
+  ratings     AlbumRating[] @relation("AlbumRatings")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt() @map("updated_at")
 
   @@map("albums")
 }
