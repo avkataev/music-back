@@ -1,14 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TaskModule } from './task/task.module';
 import { ConfigModule } from '@nestjs/config';
-import { MovieModule } from './movie/movie.module';
-import { ArtistModule } from './artist/artist.module';
-import { AlbumModule } from './album/album.module';
-import { TrackModule } from './track/track.module';
+import { ArtistModule } from './modules/artist/artist.module';
+import { AlbumModule } from './modules/album/album.module';
+import { TrackModule } from './modules/track/track.module';
 import { PrismaModule } from './prisma/prisma.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { GenreModule } from './modules/genre/genre.module';
+import { NewsModule } from './modules/news/news.module';
+import { ConcertModule } from './modules/concert/concert.module';
+import { FileModule } from './file/file.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import * as path from 'path';
 
 @Module({
   imports: [
@@ -16,12 +20,18 @@ import { AuthModule } from './auth/auth.module';
       isGlobal: true,
     }),
     PrismaModule,
-    TaskModule,
-    MovieModule,
     ArtistModule,
     AlbumModule,
     TrackModule,
     AuthModule,
+    GenreModule,
+    NewsModule,
+    ConcertModule,
+    ServeStaticModule.forRoot({
+      rootPath: path.join(__dirname, '..', 'uploads'),
+      serveRoot: '/static',
+    }),
+    FileModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -13,15 +13,15 @@ enum Role {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  name      String
-  role      Role     @default(USER)
-  artistLikes    ArtistLike[]    @relation("UserArtistLikes")
-  albumRatings   AlbumRating[]   @relation("UserAlbumRatings")
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt() @map("updated_at")
+  id           String        @id @default(uuid())
+  email        String        @unique
+  password     String
+  name         String
+  role         Role          @default(USER)
+  artistLikes  ArtistLike[]  @relation("UserArtistLikes")
+  albumRatings AlbumRating[] @relation("UserAlbumRatings")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt() @map("updated_at")
 
   @@map("users")
 }
@@ -44,7 +44,7 @@ model AlbumRating {
   userId    String
   album     Album    @relation("AlbumRatings", fields: [albumId], references: [id])
   albumId   Int
-  value     Int      // Например, 1–5
+  value     Int // Например, 1–5
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -83,6 +83,11 @@ model Album {
   coverUrl    String?       @map("cover_url")
   duration    Int?
   description String?
+  type        String?
+  genres      String[]
+  languages   String[]
+  countries   String[]
+  cities      String[]
   artists     Artist[]      @relation("artist_albums")
   tracks      Track[]       @relation("album_tracks")
   awards      Award[]       @relation("album_awards")
