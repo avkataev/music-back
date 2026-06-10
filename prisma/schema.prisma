@@ -166,14 +166,14 @@ model Review {
   @@map("reviews")
 }
 
-model Genry {
+model Genre {
   id          Int      @id @default(autoincrement())
   title       String
   description String
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt() @map("updated_at")
 
-  @@map("genries")
+  @@map("genres")
 }
 
 // награды

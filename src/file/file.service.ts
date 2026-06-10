@@ -9,7 +9,7 @@ export class FileService {
     const uploadDir = path.join(__dirname, '..', '..', 'uploads');
 
     const ext = path.extname(file.originalname);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+
     const uniqueName = `${uuidv4()}${ext}`;
 
     const filePath = path.join(uploadDir, uniqueName);

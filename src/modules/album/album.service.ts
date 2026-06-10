@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Album } from '@prisma/client';
 import { CreateAlbumDto } from './dto/create-album.dto';
+import { UpdateAlbumDto } from './dto/update-album.dto';
 
 @Injectable()
 export class AlbumService {
@@ -28,16 +29,28 @@ export class AlbumService {
     }
     return album;
   }
-  async remove(id: number) {
-    const album = await this.prismaService.album.findUnique({
-      where: { id },
-    });
-    if (!album) {
-      throw new NotFoundException('Album not found');
+  async update(id: number, dto: UpdateAlbumDto): Promise<Album> {
+    try {
+      return await this.prismaService.album.update({
+        where: { id },
+        data: dto,
+        include: {
+          artists: true,
+          tracks: true,
+        },
+      });
+    } catch {
+      throw new NotFoundException('Альбом не найден');
     }
+  }
 
-    return await this.prismaService.album.delete({
-      where: { id },
-    });
+  async remove(id: number): Promise<Album> {
+    try {
+      return await this.prismaService.album.delete({
+        where: { id },
+      });
+    } catch {
+      throw new NotFoundException('Альбом не найден');
+    }
   }
 }

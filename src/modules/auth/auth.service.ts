@@ -1,7 +1,8 @@
 import {
   ConflictException,
   Injectable,
-  NotFoundException, UnauthorizedException,
+  NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { RegisterRequest } from './dto/register.dto';
