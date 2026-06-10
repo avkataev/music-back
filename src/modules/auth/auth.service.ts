@@ -11,7 +11,7 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService, JwtSignOptions } from '@nestjs/jwt';
 import type { JwtPayload } from './interfaces/jwt.interface';
 import { LoginRequest } from './dto/login.dto';
-import type { Response, Request } from 'express';
+import type { Response, Request, CookieOptions } from 'express';
 import { isDev } from '../../utils/is-dev-util';
 
 @Injectable()
@@ -144,7 +144,7 @@ export class AuthService {
   }
 
   logout(res: Response) {
-    this.setCookie(res, 'refreshToken', new Date(0));
+    res.clearCookie('refreshToken', this.getCookieOptions());
     return true;
   }
 
@@ -159,12 +159,22 @@ export class AuthService {
 
   private setCookie(res: Response, value: string, expires: Date) {
     res.cookie('refreshToken', value, {
+      ...this.getCookieOptions(),
+      expires,
+    });
+  }
+
+  private getCookieOptions(): CookieOptions {
+    const dev = isDev(this.configService);
+
+    return {
       httpOnly: true,
       domain: this.COOKIE_DOMAIN,
-      expires: expires,
-      secure: !isDev(this.configService),
-      sameSite: isDev(this.configService) ? 'none' : 'lax',
-    });
+      // sameSite: 'none' требует secure: true (спецификация cookie),
+      // поэтому опции синхронизированы по окружению.
+      secure: !dev,
+      sameSite: dev ? 'lax' : 'none',
+    };
   }
 
   async validate(id: string) {
